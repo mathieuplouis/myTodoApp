@@ -33,20 +33,16 @@ public class TodoController {
 
 	//First step with git
 	
-	//@RequestMapping(value="/todo", method = RequestMethod.GET)
+	
 	@GetMapping(value="/addTodo")
 	public String todoPage(@ModelAttribute("todo") Todo todo) {
-		System.out.println("add*************************************");
+		
 		return"todo";
 	}
 	
 	@PostMapping(value="/addTodo")
-     public String addTodo(@Valid  Todo todo, BindingResult bindingResult) {
-		System.out.println("Test*************************************");
-//		if(bindingResult.hasErrors()) {
-//			return "todo";	
-//		}
-		todoService.saveTodo(todo);	
+    public String addTodo(Todo todo) {
+	todoService.saveTodo(todo);	
 	return "redirect:/listTodo";	
 	}	
 	
