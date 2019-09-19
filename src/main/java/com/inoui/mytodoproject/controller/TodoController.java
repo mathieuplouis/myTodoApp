@@ -31,6 +31,7 @@ public class TodoController {
 		return "list";
 	}
 
+	//First step with git
 	
 	//@RequestMapping(value="/todo", method = RequestMethod.GET)
 	@GetMapping(value="/addTodo")
